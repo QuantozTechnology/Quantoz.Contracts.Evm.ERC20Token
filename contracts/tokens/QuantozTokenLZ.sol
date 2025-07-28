@@ -23,8 +23,6 @@ contract QuantozTokenLZ is
      */
     function grantInitialRole() public onlyOwner {        
         _grantRole(DEFAULT_ADMIN_ROLE, owner());
-        _grantRole(MINTER_ROLE, owner());
-        _grantRole(BURNER_ROLE, owner());
     }
 
     function mint(address _to, uint256 _amount) public override onlyRole(MINTER_ROLE) {
