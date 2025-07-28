@@ -525,6 +525,7 @@ describe("RBAC Upgrades", async () => {
     // Setup RBAC
     await upgradedToken.connect(owner).grantInitialRole();
     await upgradedToken.connect(owner).grantRole(await upgradedToken.MINTER_ROLE(), ownerAddress);
+    await upgradedToken.connect(owner).grantRole(await upgradedToken.BURNER_ROLE(), ownerAddress);
 
     // Mint tokens to user
     await upgradedToken.connect(owner).mint(userAddress, 1000000);
@@ -592,6 +593,8 @@ describe("RBAC Upgrades", async () => {
     const quantozToken = await ethers.getContractAt("QuantozTokenLZ", tokenAddress);
 
     await quantozToken.connect(owner).grantInitialRole();
+    await quantozToken.connect(owner).grantRole(await quantozToken.MINTER_ROLE(), ownerAddress);
+    await quantozToken.connect(owner).grantRole(await quantozToken.BURNER_ROLE(), ownerAddress);
 
     try {
       await quantozToken.connect(user).grantInitialRole();
