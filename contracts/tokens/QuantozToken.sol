@@ -3,7 +3,6 @@
 pragma solidity 0.8.28;
 
 import "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC20PermitUpgradeable.sol";
-import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
 import "./BlockedList.sol";
 
 contract QuantozToken is     
@@ -58,8 +57,6 @@ contract QuantozToken is
     }    
 
      function mint(address _to, uint256 _amount) public virtual onlyOwner {
-        require(_to != address(0), "Token: mint to the zero address");
-        require(_amount > 0, "Token: amount must be greater than 0");
         _mint(_to, _amount);
         emit Mint(_to, _amount);
     }
@@ -68,8 +65,6 @@ contract QuantozToken is
      * @dev Burn tokens
      */
     function burn(address _from, uint256 _amount) public virtual onlyOwner {
-        require(_from != address(0), "Token: burn from the zero address");
-        require(_amount > 0, "Token: amount must be greater than 0");
         _burn(_from, _amount);
         emit Burn(_from, _amount);
     }
