@@ -11,8 +11,15 @@ import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
    Licensed under the Apache License, Version 2.0
    http://www.apache.org/licenses/LICENSE-2.0
+
+   ----------------------------------------------------------------------
+   Amendment (2025-07-31 by raymens):
+   - The contract was updated to be declared as `abstract` to indicate
+     that it contains at least one function without an implementation
+     and is meant to serve as a base contract.
+   ----------------------------------------------------------------------
 */
-contract BlockedList is OwnableUpgradeable {
+abstract contract BlockedList is OwnableUpgradeable {
     ////////////////////////////
     //    State Variables     //
     ///////////////////////////

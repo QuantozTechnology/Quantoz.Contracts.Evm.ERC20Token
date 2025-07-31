@@ -17,7 +17,6 @@ The Quantoz tokens are upgradeable ERC-20 tokens built on OpenZeppelin's upgrade
 - **ERC-20 Standard**: Full ERC-20 compliance with additional features
 - **ERC-20 Permit**: Support for gasless approvals via EIP-2612
 - **Custom Decimals**: Configurable decimal places (1-18)
-- **Reentrancy Protection**: Built-in security against reentrancy attacks
 
 ### Security Features
 - **Blocked List**: Ability to block/unblock addresses from transfers
@@ -228,7 +227,6 @@ The comprehensive test suite covers:
 - **Integration**: Works with both base and RBAC versions
 
 ### Security Testing
-- **Reentrancy Protection**: Against reentrancy attacks
 - **Input Validation**: Zero address, zero amount checks
 - **Permission Checks**: Only authorized users can perform operations
 - **Event Emission**: Proper event logging
@@ -248,7 +246,6 @@ The comprehensive test suite covers:
 - **Backward Compatibility**: Original owner functions preserved
 
 ### General Security
-- **Reentrancy Protection**: Built-in guards against reentrancy
 - **Input Validation**: Comprehensive parameter checking
 - **Event Logging**: All important operations emit events
 - **Upgrade Safety**: Safe upgrade patterns with state preservation
